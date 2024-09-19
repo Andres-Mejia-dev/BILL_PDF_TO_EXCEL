@@ -1,0 +1,31 @@
+Descripción del Proyecto
+
+Este proyecto está diseñado para extraer automáticamente información clave de facturas en formato PDF y exportarla a un archivo Excel. 
+Posteriormente, los archivos PDF procesados se mueven a una carpeta designada. El sistema es útil para quienes manejan grandes volúmenes 
+de facturas y desean automatizar el procesamiento y almacenamiento de estos documentos.
+
+
+Características del Proyecto:
+
+* Extracción automática de datos: El script utiliza expresiones regulares para extraer información clave de las facturas, como el número de factura, el vendedor, el cliente, NIT, y la fecha.
+* Exclusión de información sensible: Los datos relacionados con el teléfono del vendedor se excluyen intencionadamente al exportar la información.
+* Almacenamiento en Excel: Los datos de cada factura se guardan en un archivo Excel, con soporte para agregar datos de múltiples facturas.
+* Organización de archivos: Los archivos PDF se mueven automáticamente a una carpeta de facturas procesadas después de que su información ha sido extraída.
+* Fácil de integrar y personalizar: El proyecto es escalable y puede adaptarse a otros tipos de documentos o formatos con mínimas modificaciones.
+
+
+Requerimientos:
+Python 3.x
+Librerías:
+PyPDF2
+pandas
+openpyxl
+shutil (parte de la librería estándar de Python)
+
+
+Estructura del Código:
+
+* Extracción de datos de PDF: Se utiliza la librería PyPDF2 para abrir y leer los archivos PDF, y re para las expresiones regulares que permiten extraer los campos relevantes.
+* Guardar en Excel: Utilizando pandas, se crea o actualiza un archivo Excel con la información extraída, excluyendo datos no deseados como el teléfono del vendedor.
+* Mover PDF procesado: El módulo shutil se utiliza para mover los archivos PDF procesados a una carpeta específica para una mejor organización.
+* Automatización del proceso: Se procesan automáticamente todos los archivos PDF en una carpeta y se agregan al archivo Excel, ideal para manejo de grandes volúmenes de facturas.
